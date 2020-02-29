@@ -7,14 +7,138 @@
   <title>Document</title>
   <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../lib/swiper/css/swiper.min.css">
+  
 </head>
+
 <body>
-
-  <h1>我是一个首页</h1>
-
-  <h2>nihao  shijie </h2>
-
+  <!-- 顶部 -->
+  <header>
+      <div class="header content clear">
+        <ul class="clear">
+          <li><a href="">小米商城</a></li>
+          <li><a href="">MIUI</a></li>
+          <li><a href="">loT</a></li>
+          <li><a href="">云服务</a></li>
+          <li><a href="">金融</a></li>
+          <li><a href="">有品</a></li>
+          <li><a href="">小爱开放平台</a></li>
+          <li><a href="">企业团购</a></li>
+          <li><a href="">资质证照</a></li>
+          <li><a href="">协议规则</a></li>
+          <li><a href="">下载app</a></li>
+          <li><a href="">Select Location</a></li>
+        </ul>
+        <div class="cart"><a href="">购物车(0)</a></div>
+        <ol class="clear">
+          <li><a href="">登陆</a></li>
+          <li><a href="">注册</a></li>
+          <li><a href="">消息通知</a></li>
+        </ol>
+      </div>
+  </header>
+  <!-- 导航栏 -->
+  <div id="nav">
+    <div class="nav clear content">
+      <div class="logo"><a href=""><img src="../images/nav-logo.jpg" alt=""></a></div>
+      <ul class="clear">
+        <li><a href="">小米手机</a></li>
+        <li><a href="">Redmi 红米</a></li>
+        <li><a href="">电视</a></li>
+        <li><a href="">笔记本</a></li>
+        <li><a href="">家电</a></li>
+        <li><a href="">路由器</a></li>
+        <li><a href="">智能硬件</a></li>
+        <li><a href="">服务</a></li>
+        <li><a href="">社区</a></li>
+      </ul>
+      <div class="search clear">
+        <input type="text">
+        <button>搜索</button>
+      </div>
+    </div>
+  </div>
+  <!-- 轮播图区 -->
+  <div id="banner">
+    <div class="banner content">
+      <div class="swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a href=""><img src="../images/swiper01.jpg" alt="" ></a></li>
+            <li class="swiper-slide"><a href=""><img src="../images/swiper02.jpg" alt="" ></a></li>
+            <li class="swiper-slide"><a href=""><img src="../images/swiper03.jpg" alt="" ></a></li>
+            <li class="swiper-slide"><a href=""><img src="../images/swiper04.jpg" alt="" ></a></li>
+            <li class="swiper-slide"><a href=""><img src="../images/swiper05.jpg" alt="" ></a></li>
+        </ul>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <ul>
+      <li><a href="">手机 电话卡</a></li>
+      <li><a href="">电视 盒子</a></li>
+      <li><a href="">笔记本 显示器 平板</a></li>
+      <li><a href="">家电 插线板</a></li>
+      <li><a href="">出行 穿戴</a></li>
+      <li><a href="">智能 路由器</a></li>
+      <li><a href="">电源 配件</a></li>
+      <li><a href="">健康 儿童</a></li>
+      <li><a href="">耳机 音箱</a></li>
+      <li><a href="">生活 箱包</a></li>
+    </ul>
+    </div>
+  </div>
+  <div id="main">
+    <div class="main content ">
+      <div>
+        <ul>
+          <li><a href=""><img src="../images/main-xb01.png" alt=""> 小米秒杀</a></li>
+          <li><a href=""><img src="../images/main-xb02.png" alt=""> 企业团购</a></li>
+          <li><a href=""><img src="../images/main-xb03.png" alt=""> F码通道</a></li>
+          <li><a href=""><img src="../images/main-xb04.png" alt=""> 米粉卡</a></li>
+          <li><a href=""><img src="../images/main-xb05.png" alt=""> 以旧换新</a></li>
+          <li><a href=""><img src="../images/main-xb06.png" alt=""> 话费充值</a></li>
+        </ul>
+      </div>
+      <ul>
+        <li><a href=""><img src="../images/main01.jpg" alt=""></a></li>
+        <li><a href=""><img src="../images/main02.jpg" alt=""></a></li>
+        <li><a href=""><img src="../images/main03.jpg" alt=""></a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- 主要内容区 -->
+  <section>
+    <h2 class="content">小米闪购</h2>
+    <div class="shop content">
+      <div class="flashsale">
+        <span>14:00场</span>
+        <img src="../images/flashsela time.png" alt="">
+        <p>距离结束还有</p>
+        <div class="time">
+          <span ></span>
+          <i>:</i>
+          <span ></span>
+          <i>:</i>
+          <span ></span>
+        </div>
+      </div>
+    </div>
+    <div class="flashlist">
+      <!-- 轮播图 -->
+      <ul></ul>
+    </div>
+  </section>
+  <script src="../lib/swiper/js/swiper.min.js"></script>
   <script src="../lib/jquery/dist/jquery.min.js"></script>
   <script src="../js/index.js"></script>
+  
 </body>
+
 </html>
