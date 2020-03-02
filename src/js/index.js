@@ -1,4 +1,94 @@
-      
+//get nav_list渲染nav里面的导航栏内容
+get_nav_list();
+function get_nav_list(){
+    $.ajax({
+        url:"../lib/nav_top.json",
+        dataType:"json",
+        success:function (res){
+            console.log(res);
+            let str=""
+            res.forEach(item=>{
+                str += `<li><a>${item.name}</a></li>`//将数据写入nav_top一级菜单
+            })
+            $(".nav>ul")
+                .html(str)//将src写入.html
+                .hover(//控制移入nav_top时nav_box的显示隐藏
+                    function (){$('.nav_box').stop().slideDown()},
+                    function (){$('.nav_box').stop().slideUp()}
+                )
+                .children("li")//到.nav_ul的每一个子li
+                .on("mouseover",function (){
+                    const index=$(this).index()//打标记
+                    const list=res[index].list//找到json文件里面的对应数据
+                    let str=""
+                    list.forEach(item=>{//遍历
+                        str +=`
+                        <li><a href="">
+                            <div>
+                            <img src="${item.list_url}" alt="">
+                            </div>
+                            <p>${item.list_name}</p>
+                            <span>${item.list_price}</span>
+                        </a></li>
+                        `
+                    })
+                    $('.nav_box > ol')
+                        .html(str)
+                })
+            $(".nav_box")
+                .hover(
+                    function () { $(this).finish().show() },
+                    function () { $(this).finish().slideUp() }
+                )
+        },
+
+    })
+}
+
+//渲染banner区域的nav导航栏内容
+get_banner_nav();
+function get_banner_nav(){
+    $.ajax({
+        url:"../lib/nav_banner.json",
+        dataType:"json",
+        success:function (res){
+            console.log(res);
+            let str="";
+            res.forEach(item=>{
+                str+=`<li><a>${item.name}</a></li>`
+            });
+            $(".banner>ul")
+                .html(str)
+                .hover(//这样写没有下拉和上浮的动画
+                    function(){$(".banner>ol").stop().show()},
+                    function(){$(".banner>ol").stop().hide()}
+                )
+                .children("li")//到.nav_ul的每一个子li
+                .on("mouseover",function (){
+                    const index=$(this).index()//打标记
+                    const list=res[index].list//找到json文件里面的对应数据
+                    // console.log(list)
+                    let str=""
+                    list.forEach(item=>{//遍历
+                        str +=`
+                        <li><a href="">
+                            <img src="${item.list_url}" alt="">
+                            <span>${item.list_name}</span>
+                        </a></li>
+                        `
+                    })
+                    $('.banner > ol')
+                        .html(str)//将创建的内容写入ol中
+                        .css('width',265*Math.ceil(list.length/5))//控制ol的宽度
+                        .hover(//设置移入移除样式
+                            function () { $(this).finish().show() },
+                            function () { $(this).finish().hide() }
+                        )
+                })
+        }
+    })
+}
+//swiper轮播图 
 var mySwiper = new Swiper ('.swiper-container', {
     loop: true, // 循环模式选项
     autoplay:{
