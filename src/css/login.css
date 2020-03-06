@@ -1,0 +1,19 @@
+.content{width: 1130px;margin: 0 auto;}
+
+#banner{height: 556px;}
+#banner{background: url(../images/login-bj.png) no-repeat -380px 0px;background-size: cover;}
+#banner{position: relative;}
+#banner>div{position: absolute;right: 30px;background-color: #ffffff;width: 410px;height: 556px;}
+#banner>div>.top{display: flex;justify-content: center;}
+#banner>div>.top>a{font:24px/82px "arial";color: #666666;}
+#banner>div>.top>span{font: 24px/82px "arial";margin: 0 42px 0 35px;color: #999999;}
+#banner>div>.top>.active{color: #f56600;}
+
+#banner>div>.login{display: flex;flex-direction: column;text-align: center;}
+#banner>div>.login>input{width: 346px;margin: 10px auto;padding: 13px 16px 13px 14px;}
+#banner>div>.login>#login-btn{box-sizing: border-box;width: 380px;background-color: #ff6700;color: #ffffff;}
+#banner>div>.login>#signin-btn{box-sizing: border-box;width: 380px;background-color: #ff6700;color: #ffffff;}
+#banner>div>.login>div>a{color: #ff6700;font: 14px/24px "arial";}
+#banner>div>.login>div>div>a{color: #999999;font: 14px/18px "arial";}
+#banner>div>.login>div>div>span{color: #999999;}
+.erro{display: none;}

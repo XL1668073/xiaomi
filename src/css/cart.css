@@ -1,0 +1,8 @@
+
+
+
+#tb>tr>td:nth-child(2)>img{width: 80px;height: 80px;}
+
+.bottom{display: flex;justify-content: space-between;}
+#tb{line-height: 80px;}
+#tb .num{line-height: 80px;height: 30px;}

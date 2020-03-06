@@ -1,0 +1,11 @@
+.main{display: flex;}
+.main>img{width: 560px;height: 560px;}
+.main>div{display: flex;flex-direction: column;width: 606px;}
+.main>div>h3{font:30px/80px "";color: #333;margin-top: 30px;width: 100%;}
+.main>div>p{font:18px/20px "" ;color: #b0b0b0;}
+.main>div>span{font:30px/80px "" ;color: #f1393a;margin-top: 20px;margin-bottom: 10px;margin-top: 80px;}
+.main>div>button{font:14px/30px "";color: #ffffff;background-color: #f1393a;width: 120px;}
+
+
+
+

@@ -88,8 +88,47 @@ function get_banner_nav(){
         }
     })
 }
+
+//渲染小米快闪轮播图
+get_shop_swiper();
+function get_shop_swiper(){
+    $.ajax({
+        url:"../lib/flashlist.json",
+        dataType:"json",
+        success:function(res){
+            console.log(res);
+            let str="";
+            res.forEach(item=>{
+                str+=`
+                <li class="swiper-slide">
+                    <img src="${item.list_url}" alt="">
+                    <h3>${item.list_name}</h3>
+                    <p>${item.list_desc}</p>
+                    <span>${item.list_price}</span>
+                </li>`
+            })
+            $(".shopswiper>ul")
+                .html(str)
+        }
+    })
+}
+
+var mySwiper2 = new Swiper ('.shopswiper', {
+      loop: true, // 循环模式选项
+      // 如果需要前进后退按钮
+    //   navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    //   },
+      autoplay : true,     
+      speed:1000,
+      loop : true,
+      freeMode:true,
+      slidesPerView : 4,
+      slidesPerGroup : 4
+    })    
 //swiper轮播图 
-var mySwiper = new Swiper ('.swiper-container', {
+var mySwiper = new Swiper ('.bannerswiper', {
     loop: true, // 循环模式选项
     autoplay:{
         delay:3000,
@@ -111,13 +150,28 @@ var mySwiper = new Swiper ('.swiper-container', {
     }
 })
 
+// var swiper = new Swiper('.shopswiper', {
+//      slidesPerView: 1,
+//     slidesPerView: "auto",
 
+
+//     slidesPerGroup: 1,
+//     loop: true,
+//     autoplay: {
+//       delay: 1000
+//     },
+//     loopFillGroupWithBlank: true,
+//     navigation: {
+//       nextEl: '.left',
+//       prevEl: '.right',
+//     },
+//   });
 
 //倒计时抢购
 function a(n){//当为0时在前面补一个0
     return n<10 ? "0"+n : n;
 }
-let future_time=new Date('2020-3-3 20:42:30');
+let future_time=new Date('2020-3-20 20:42:30');
 function print_time(){
     let now_time=new Date();//现在时间
     let remaining_time=Math.ceil((future_time-now_time)/1000);//时间差
@@ -140,4 +194,16 @@ function print_time(){
 }
 let timer=setInterval(print_time,1000);
 
-
+//tab选项卡切换
+$(".jiadian>a").click(function (){
+    $(this)
+      .addClass("active")
+      .siblings("a")
+      .removeClass("active")
+    console.log($(this).index()-2)
+    $(".jiadian>ul")
+      .removeClass("active")
+      .eq($(this).index()-3)//这里的index()是a元素再父元素中的索引号，为什么不是减二，这地方比较迷，跟html结构有关
+      .addClass("active")
+        
+})
